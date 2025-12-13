@@ -542,7 +542,136 @@ body {
     transition: 0.2s ease-in; 
     border-color: #f77062; 
 } 
- 
+ /* ================================
+   Projects Section - "Code Showcase"
+   ================================ */
+
+#projects .services__container {
+    gap: 2.5rem;
+}
+
+#projects .services__card {
+    background: linear-gradient(145deg, #1a1a1a, #252525);
+    border: 2px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: visible;
+}
+
+#projects .services__card::before {
+    content: '</>';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff0844, #ffb199);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.2;
+}
+
+#projects .services__card:hover::before {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+#projects .services__card:hover {
+    border-color: #ff0844;
+    box-shadow:
+        0 0 30px rgba(255, 8, 68, 0.3),
+        0 0 60px rgba(183, 33, 255, 0.2);
+}
+
+
+/* ================================
+   Reflection Section - "Thought Bubble"
+   ================================ */
+
+#reflection .services {
+    background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
+}
+
+#reflection .services__card {
+    background: linear-gradient(135deg, #2a1a2e, #1f1f1f);
+    border: 2px solid #4a1a4a;
+    box-shadow: 0 15px 40px rgba(183, 33, 255, 0.2);
+    position: relative;
+}
+
+#reflection .services__card::before {
+    content: '💭';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 3rem;
+    opacity: 0.6;
+}
+
+#reflection .services__card h2 {
+    background-image: linear-gradient(135deg, #ff0844, #ffb199, #b721ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 2rem;
+}
+
+#reflection .services__card:hover {
+    border-color: #b721ff;
+    box-shadow:
+        0 0 40px rgba(183, 33, 255, 0.4),
+        0 0 80px rgba(255, 8, 68, 0.2);
+    transform: scale(1.03);
+}
+
+
+/* ================================
+   Certificates Section - "Achievement Badge"
+   ================================ */
+
+#certificates .services__card {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border: 3px solid transparent;
+    background-image:
+        linear-gradient(145deg, #1e1e1e, #2a2a2a),
+        linear-gradient(135deg, #ffd700, #ffed4e, #ffd700);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 10px 35px rgba(255, 215, 0, 0.2);
+    position: relative;
+}
+
+#certificates .services__card::before {
+    content: '🏆';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    opacity: 0.4;
+}
+
+#certificates .services__card img {
+    border: 2px solid #ffd700;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#certificates .services__card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+}
+
+#certificates .services__card:hover {
+    box-shadow:
+        0 0 40px rgba(255, 215, 0, 0.4),
+        0 0 80px rgba(255, 237, 78, 0.2);
+    transform: translateY(-5px);
+}
+
+#certificates .services__card h3 {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
 /* Footer CSS */ 
 .footer__container { 
     background-color: #141414; 
