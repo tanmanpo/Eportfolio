@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta property="og:title" content="My Skills | Mike Jemmiel Teñoso" />
+    <meta property="og:description" content="Technical skills and expertise of Mike Jemmiel Teñoso – BSIT Student" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="custom.css">
+
+    <style>
+        /* Skills Progress Bar Styles */
+        .skill-item {
+            margin-bottom: 2rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .skill-percentage {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff0844, #ffb199);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-bar-container {
+            width: 100%;
+            height: 25px;
+            background: #0a0a0a;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0844, #ffb199, #b721ff);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            transition: width 2s ease-out;
+            box-shadow: 0 0 20px rgba(255, 8, 68, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+
+        .skill-bar.animate {
+            animation: slideIn 1.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0%;
+            }
+        }
+
+        /* Skill Level Colors */
+        .skill-level-expert .skill-bar {
+            background: linear-gradient(90deg, #00ff87, #60efff);
+            box-shadow: 0 0 20px rgba(0, 255, 135, 0.5);
+        }
+
+        .skill-level-intermediate .skill-bar {
+            background: linear-gradient(90deg, #ff0844, #ffb199);
+            box-shadow: 0 0 20px rgba(255, 8, 68, 0.5);
+        }
+
+        .skill-level-beginner .skill-bar {
+            background: linear-gradient(90deg, #b721ff, #21d4fd);
+            box-shadow: 0 0 20px rgba(183, 33, 255, 0.5);
+        }
+
+        /* Skill Category Cards */
+        .skills-category {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ff0844, #ffb199, #b721ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+    <title>My Skills | Mike Jemmiel Teñoso</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" class="navbar__logo" id="navbar__logo">
+                <i class="fas fa-gem"></i> MJT
+            </a>
+
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="about.html" class="navbar__links">About</a></li>
+                <li class="navbar__item"><a href="skills.html" class="navbar__links">Skills</a></li>
+                <li class="navbar__item"><a href="projects.html" class="navbar__links">Projects</a></li>
+                <li class="navbar__btn"><a href="index.html#contact" class="button">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Skills Hero Section -->
+    <div class="main" style="height: 40vh;">
+        <div class="main__container" style="height: 40vh;">
+            <div class="main__content" style="text-align: center; grid-column: 1 / -1;">
+                <h1 style="font-size: 3.5rem;">MY SKILLS</h1>
+                <p style="font-size: 1.2rem; margin-top: 1rem;">My technical expertise and proficiency levels</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Programming Languages Section -->
+    <div class="services" style="padding-top: 2rem;">
+        <div class="services__container">
+            <div class="services__card skills-category">
+                <h2 class="category-title">💻 Programming Languages</h2>
+
+                <!-- HTML -->
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="fab fa-html5"></i> HTML</span>
+                        <span class="skill-percentage">78%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar skill-level-expert animate" style="width: 78%;"></div>
+                    </div>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span class="skill-percentage">57%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar skill-level-intermediate animate" style="width: 57%;"></div>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="skill-percentage">33%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar skill-level-beginner animate" style="width: 33%;"></div>
+                    </div>
+                </div>
+
+                <!-- C++ -->
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="fas fa-code"></i> C++</span>
+                        <span class="skill-percentage">65%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar skill-level-intermediate animate" style="width: 65%;"></div>
+                    </div>
+                </div>
+
+                <!-- PHP -->
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="fab fa-php"></i> PHP</span>
+                        <span class="skill-percentage">32%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar skill-level-beginner animate" style="width: 32%;"></div>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-percentage">45%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar skill-level-beginner animate" style="width: 45%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Skills Section -->
+    <div class="services" style="background: #0a0a0a;">
+        <h1>Technical Skills</h1>
+        <div class="services__container">
+            
+            <div class="services__card">
+                <h2>🌐 Web Development</h2>
+                <ul>
+                    <li>HTML & CSS Fundamentals</li>
+                    <li>Responsive Web Design</li>
+                    <li>JavaScript Programming</li>
+                    <li>Frontend Development</li>
+                    <li>Basic PHP Backend</li>
+                </ul>
+            </div>
+
+            <div class="services__card">
+                <h2>💾 Programming</h2>
+                <ul>
+                    <li>Object-Oriented Programming (C++)</li>
+                    <li>Algorithm Design</li>
+                    <li>Data Structures</li>
+                    <li>Problem Solving</li>
+                    <li>Code Debugging</li>
+                </ul>
+            </div>
+
+            <div class="services__card">
+                <h2>🖥️ Software & Tools</h2>
+                <ul>
+                    <li>MS Office Suite</li>
+                    <li>Visual Studio Code</li>
+                    <li>Git & GitHub</li>
+                    <li>Video/Photo Editing</li>
+                    <li>System Analysis</li>
+                </ul>
+            </div>
+
+            <div class="services__card">
+                <h2>🎨 Design & Media</h2>
+                <ul>
+                    <li>UI/UX Basics</li>
+                    <li>Photo Editing</li>
+                    <li>Video Editing</li>
+                    <li>Content Creation</li>
+                    <li>Digital Design</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Soft Skills Section -->
+    <div class="services">
+        <h1>Soft Skills</h1>
+        <div class="services__container">
+            
+            <div class="services__card">
+                <h2>🧠 Problem Solving</h2>
+                <p>Analytical thinking and logical approach to challenges. Breaking down complex problems into manageable solutions.</p>
+            </div>
+
+            <div class="services__card">
+                <h2>🔄 Adaptability</h2>
+                <p>Quick learner who adapts to new technologies and environments. Flexible in facing different challenges and situations.</p>
+            </div>
+
+            <div class="services__card">
+                <h2>⏰ Time Management</h2>
+                <p>Balancing academic work, projects, and personal development. Organized approach to tasks and deadlines.</p>
+            </div>
+
+            <div class="services__card">
+                <h2>📚 Self-Learning</h2>
+                <p>Strong ability to learn independently through online resources, documentation, and practice.</p>
+            </div>
+
+            <div class="services__card">
+                <h2>🎯 Attention to Detail</h2>
+                <p>Careful observation and thorough approach to coding and problem-solving tasks.</p>
+            </div>
+
+            <div class="services__card">
+                <h2>💪 Perseverance</h2>
+                <p>Determination to overcome obstacles and continue learning despite challenges and limited resources.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Currently Learning Section -->
+    <div class="services" style="background: #0a0a0a;">
+        <h1>📖 Currently Learning</h1>
+        <div class="services__container">
+            
+            <div class="services__card" style="width: 100%; max-width: 900px;">
+                <h2>🚀 Expanding My Skillset</h2>
+                <p>I'm actively working on improving my skills and learning new technologies:</p>
+                <ul style="margin-top: 1rem;">
+                    <li><strong>Advanced JavaScript:</strong> ES6+, DOM Manipulation, Async Programming</li>
+                    <li><strong>PHP Development:</strong> Backend logic, Database integration</li>
+                    <li><strong>Python Programming:</strong> Automation, Data Analysis</li>
+                    <li><strong>Database Management:</strong> MySQL, SQL queries</li>
+                    <li><strong>Frameworks & Libraries:</strong> Bootstrap, jQuery</li>
+                    <li><strong>Version Control:</strong> Git and GitHub workflows</li>
+                </ul>
+                <p style="margin-top: 1.5rem; font-style: italic;">Every day is a new opportunity to learn and grow. I dedicate time to practice coding, build projects, and explore new concepts in IT.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Skill Level Legend -->
+    <div class="services" style="padding: 2rem 0; min-height: auto;">
+        <h1>📊 Skill Level Guide</h1>
+        <div class="services__container">
+            
+            <div class="services__card" style="background: linear-gradient(145deg, #001a0a, #002415); border-color: #00ff87;">
+                <h2 style="color: #00ff87;">🌟 Expert (70%+)</h2>
+                <p>Strong proficiency and confidence. Can build projects independently and solve complex problems.</p>
+            </div>
+
+            <div class="services__card" style="background: linear-gradient(145deg, #1a0a0a, #2a1515); border-color: #ff0844;">
+                <h2 style="color: #ff0844;">⭐ Intermediate (50-69%)</h2>
+                <p>Good understanding and practical experience. Can work with guidance and handle moderate challenges.</p>
+            </div>
+
+            <div class="services__card" style="background: linear-gradient(145deg, #0a0a1a, #15152a); border-color: #b721ff;">
+                <h2 style="color: #b721ff;">💫 Beginner (Below 50%)</h2>
+                <p>Learning foundations and building experience. Actively practicing and improving through projects.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="services" style="padding: 3rem 0; min-height: auto; background: #0a0a0a;">
+        <div style="text-align: center;">
+            <h2 style="color: white; margin-bottom: 2rem; font-size: 2rem;">Ready to See These Skills in Action?</h2>
+            <a href="projects.html" class="button" style="display: inline-block; padding: 15px 40px; font-size: 1.1rem; text-decoration: none; margin-right: 1rem;">
+                <i class="fas fa-code"></i> View My Projects
+            </a>
+            <a href="index.html#contact" class="button" style="display: inline-block; padding: 15px 40px; font-size: 1.1rem; text-decoration: none;">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer__container" id="contact">
+        <div class="footer__links">
+            <div class="footer__link-wrapper">
+                <div class="footer__link-items">
+                    <h2>Contact Me</h2>
+                    <a href="mailto:mikejemmiel2@gmail.com">mikejemmiel2@gmail.com</a>
+                    <a href="mailto:mikejemmiel1@gmail.com">mikejemmiel1@gmail.com</a>
+                    <a href="tel:+639000000000">0912 345 6789</a>
+                </div>
+                <div class="footer__link-items">
+                    <h2>Socials</h2>
+                    <a href="https://www.facebook.com/mikejemmiel.tenoso" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/dankunwel12" target="_blank">Instagram</a>
+                    <a href="https://youtube.com/@mikejemmieltenoso3685" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <section class="social__media">
+            <div class="social__media-wrap">
+                <div class="footer__logo">
+                    <a href="index.html" id="footer__logo"><i class="fas fa-gem"></i> MJT</a>
+                </div>
+                <p class="website__rights">© Mike Jemmiel Teñoso 2025. All rights reserved</p>
+                <div class="social__icons">
+                    <a href="https://www.facebook.com/mikejemmiel.tenoso" class="social__icon-link" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dankunwel12" class="social__icon-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@mikejemmieltenoso3685" class="social__icon-link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:mikejemmiel2@gmail.com" class="social__icon-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Main Script -->
+    <script src="ey.js"></script>
+
+    <script>
+        // Animate skill bars on page load
+        window.addEventListener('load', () => {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    bar.style.width = bar.style.width; // Trigger animation
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+  </html>
